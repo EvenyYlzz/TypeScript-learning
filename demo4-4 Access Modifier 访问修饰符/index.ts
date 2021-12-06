@@ -110,10 +110,8 @@ console.log('point2.getX()', point2.getX())
 interface IPoint3 {
   drawPoint: () => void;
   getDistances: (p: IPoint3) => number;
-  getX: () => number
-  getY: () => number
-  setX: (value: number) => void
-  setY: (value: number) => void
+  X: number
+  Y: number
 }
 
 class PointThree implements IPoint3 {
@@ -123,8 +121,8 @@ class PointThree implements IPoint3 {
   drawPoint = () => {
     console.log('point1.x: ', this.x, 'point1.y: ', this.y);
   };
-  getDistances = (p: IPoint3) => 
-    return Math.pow(p.getX() - this.x, 2) + Math.pow(p.getY() - this.y, 2)
+  getDistances = (p: IPoint3) => {
+    return Math.pow(p.X - this.x, 2) + Math.pow(p.Y - this.y, 2)
   }
 
   set X(value: number) {
@@ -149,7 +147,11 @@ class PointThree implements IPoint3 {
     return this.y
   }
 }
+// 习惯在声明私有属性时，给私有属性加一个_.
 
 const point3 = new PointThree(24, 50)
 point3.X = 10
 console.log('point3.X', point3.X)
+
+// 报Accessors are only available when targeting ECMAScript 5 and higher.
+// tsc -t es5 index.ts
