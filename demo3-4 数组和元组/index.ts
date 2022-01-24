@@ -13,11 +13,13 @@ let list3 =[1,2,3,4]
 
 // 混合类型
 let list4 = [1, 'ddd']
+
 // 声明时定义
 let list5: any[] = [1, 'ddd', true]
 // 注意list4与list5的区别
 // list4是number或字符串，而list5是any
 
+let list6: (string|number)[] = [1, 'ddd']
 // ----------------------------------------------------------
 
 // 是一个数组，但更准确的说法是 固定长度、固定类型的数组（元组）
@@ -33,4 +35,4 @@ let person2 = [1, 'ddd']
 person2[0] = 'ddd'
 person2[1] = 1
 person2[3] = 2
-// 不把凑哦，可看出有区别于person1，这算是union array，联合数组
+// 不报错哦，可看出有区别于person1，这算是union array，联合数组
