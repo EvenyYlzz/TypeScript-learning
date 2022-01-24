@@ -46,3 +46,28 @@ const person3: object = {
 // 此时这里会报错，因为给定object，此时会认为是给定一个空的 {}，不确定内部情况
 // 所以在ts中，object这个关键词使用到的几率很小
 console.log('person3.firstName', person3.firstName)
+
+// ---------------------------------------------------------------
+
+const person4: Object = {
+  firstName: 'alex',
+  lastName: 'Even',
+  age: 18
+}
+
+console.log('person4.firstName', person4.firstName)
+
+// ---------------------------------------------------------------
+
+let person5: Object
+person5 = '111'
+
+let person6: object
+person6 = '111' // 不能将类型“string”分配给类型“object”。ts(2322)
+
+let person7: {}
+person7 = '111'
+
+// - 1. `object`是`ts 2.2`中引入的新类型，用于表示非原始类型。ts中的原始类型有: `string，number，symbol，bigint，undefined，null，boolean`。原始类型不能赋值给 `object` 类型的变量
+// - 2. `Object`表示包含`toString, hasOwnProperty`等方法的`JavaScript`对象。所有的值（包含原始类型和非原始类型）都可以赋值给`Object`类型的变量
+// - 3. `{}`表示空对象，基本上跟`Object`类型是一样的。可以使用`Object`中`prototype`上面的方法，可以将原始类型赋值给`{}`类型的变量
