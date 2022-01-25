@@ -29,9 +29,10 @@ person1[0] = 'aaa'
 person1[1] = 1
 person1[2] = 2
 // 以上3个赋值都是错误的
-person1.push(3) // 这样却不报错，可以说是元组的“bug”
+person1.push(3) // push推入符合的类型，不会报错
+person1.push(null) // 但是不符合的类型是会报错的,类型“null”的参数不能赋给类型“string | number”的参数。ts(2345)
 
-let person2 = [1, 'ddd']
+let person2: (string|number)[] = [1, 'ddd']
 person2[0] = 'ddd'
 person2[1] = 1
 person2[3] = 2

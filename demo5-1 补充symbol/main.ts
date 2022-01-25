@@ -19,6 +19,6 @@ console.log(s3 === s4) // false
 const s5: symbol = Symbol.for('foo')
 const s6: symbol = Symbol.for('foo')
 
-// Symbol.fo会去全局查找是否已经存在对应标识符对应的symbol值
+// Symbol.for会去全局查找是否已经存在对应标识符对应的symbol值
 // 如果存在，直接返回，如果不存在，则新建一个symbol值
 console.log(s5 === s6) // => true
