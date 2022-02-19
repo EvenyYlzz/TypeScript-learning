@@ -19,6 +19,13 @@ anyValue.toUpperCase()
 
 // ----------------------------------------------------------------------------------------
 
+let anyValue1
+anyValue1 = true
+anyValue1 = 'ddd'
+anyValue1 = {}
+
+// ----------------------------------------------------------------------------------------
+
 let unknownValue: unknown = 666
 
 unknownValue = true

@@ -13,11 +13,13 @@ let list3 =[1,2,3,4]
 
 // 混合类型
 let list4 = [1, 'ddd']
+
 // 声明时定义
 let list5: any[] = [1, 'ddd', true]
 // 注意list4与list5的区别
 // list4是number或字符串，而list5是any
 
+let list6: (string|number)[] = [1, 'ddd']
 // ----------------------------------------------------------
 
 // 是一个数组，但更准确的说法是 固定长度、固定类型的数组（元组）
@@ -27,10 +29,11 @@ person1[0] = 'aaa'
 person1[1] = 1
 person1[2] = 2
 // 以上3个赋值都是错误的
-person1.push(3) // 这样却不报错，可以说是元组的“bug”
+person1.push(3) // push推入符合的类型，不会报错
+person1.push(null) // 但是不符合的类型是会报错的,类型“null”的参数不能赋给类型“string | number”的参数。ts(2345)
 
-let person2 = [1, 'ddd']
+let person2: (string|number)[] = [1, 'ddd']
 person2[0] = 'ddd'
 person2[1] = 1
 person2[3] = 2
-// 不把凑哦，可看出有区别于person1，这算是union array，联合数组
+// 不报错哦，可看出有区别于person1，这算是union array，联合数组

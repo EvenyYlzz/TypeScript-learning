@@ -1,3 +1,22 @@
+const x = undefined
+let y = undefined
+let yy: undefined = undefined
+
+// -------------------------------------------------------------
+
+const a = null
+let b = null
+let bb: null = null
+
+// -------------------------------------------------------------
+
+let void1: void
+void1 = undefined
+
+let void2: void = undefined
+
+// -------------------------------------------------------------
+
 // 悬浮函数名称看到function printResult(): void
 // 说明这个函数的返回值为void
 function printResult1() {
