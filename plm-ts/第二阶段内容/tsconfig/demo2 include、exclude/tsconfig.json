@@ -1,0 +1,4 @@
+{
+  "include": ["index2","index1.ts"],
+  "exclude": ["index1.ts"]
+}
